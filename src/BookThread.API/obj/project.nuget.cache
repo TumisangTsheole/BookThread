@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lNMrAN7bGgM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.API\\BookThread.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Blaze Universe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.11\\microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512",
+    "C:\\Users\\Blaze Universe\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

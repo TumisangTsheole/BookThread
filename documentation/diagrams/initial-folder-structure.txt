@@ -1,0 +1,40 @@
+/my-book-social-app
+│
+├── /docs                     # 📄 The "Planning Phase" (Your Portfolio Goldmine)
+│   ├── /adr                  # Architecture Decision Records (0001-0006)
+│   ├── /diagrams             # C4 Model files (l1, l2, l3) and Mermaid files
+│   └── /data                 # Database schema and ERD documentation
+│
+├── /src                      # 💻 Source Code
+│   ├── /MyBookApp.API        # Presentation Layer (ASP.NET 9 Web API)
+│   │   ├── /Controllers
+│   │   ├── /Middleware
+│   │   └── Program.cs
+│   │
+│   ├── /MyBookApp.Logic      # Logic Layer (Services & Business Rules)
+│   │   ├── /Services
+│   │   ├── /Interfaces
+│   │   └── /Models (DTOs)
+│   │
+│   ├── /MyBookApp.Data       # Data Layer (Persistence)
+│   │   ├── /Entities         # (User, Book, Thread, UserBook)
+│   │   └── AppDbContext.cs
+│   │
+│   ├── /MyBookApp.Integration # Integration Layer (External APIs)
+│   │   ├── /Clients          # (GoogleBooksClient)
+│   │   └── /Mappers
+│   │
+│   └── /my-book-app-ui       # Frontend Layer (React + Vite)
+│       ├── /src
+│       │   ├── /components
+│       │   ├── /hooks
+│       │   └── /services      # Axios/Fetch calls to your API
+│       └── package.json
+│
+├── /tests                    # 🧪 Unit & Integration Tests
+│   ├── MyBookApp.Tests.Unit
+│   └── MyBookApp.Tests.Integration
+│
+├── .gitignore
+├── MyBookApp.sln             # Visual Studio Solution File
+└── README.md                 # The "Landing Page" for your project
