@@ -1,0 +1,16 @@
+C:/Users/Blaze Universe/Desktop/dev/Professional Projects Folder/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Blaze Universe/Desktop/dev/Professional Projects Folder/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.AssemblyInfoInputs.cache
+C:/Users/Blaze Universe/Desktop/dev/Professional Projects Folder/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.AssemblyInfo.cs
+C:/Users/Blaze Universe/Desktop/dev/Professional Projects Folder/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.csproj.CoreCompileInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.AssemblyInfoInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.AssemblyInfo.cs
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.csproj.CoreCompileInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/bin/Debug/net9.0/BookThread.Data.deps.json
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/bin/Debug/net9.0/BookThread.Data.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/bin/Debug/net9.0/BookThread.Data.pdb
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/refint/BookThread.Data.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.pdb
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/ref/BookThread.Data.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.csproj.AssemblyReference.cache

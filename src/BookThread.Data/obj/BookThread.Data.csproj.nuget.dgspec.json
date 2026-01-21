@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.Data\\BookThread.Data.csproj": {}
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.Data\\BookThread.Data.csproj": {
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.Data\\BookThread.Data.csproj",
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj",
         "projectName": "BookThread.Data",
-        "projectPath": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.Data\\BookThread.Data.csproj",
-        "packagesPath": "C:\\Users\\Blaze Universe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\src\\BookThread.Data\\obj\\",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Blaze Universe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
