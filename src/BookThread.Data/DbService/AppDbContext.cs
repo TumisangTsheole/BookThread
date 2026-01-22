@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BookThread.Data.Entities;
 
-namespace MyBookApp.Data;
+namespace BookThread.Data.DbService;
 
 public class AppDbContext : DbContext
 {

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using BookThread.Data.DbService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+
+
+// 1. Get the connection string from appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// 2. Register AppDbContext with the PostgreSQL provider
+builder.Services.AddDbContext<BookThread.Data.DbService.AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

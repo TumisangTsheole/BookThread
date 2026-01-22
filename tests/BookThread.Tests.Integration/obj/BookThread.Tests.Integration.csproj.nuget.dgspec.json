@@ -1,20 +1,98 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\tests\\BookThread.Tests.Integration\\BookThread.Tests.Integration.csproj": {}
+    "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/BookThread.Tests.Integration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\tests\\BookThread.Tests.Integration\\BookThread.Tests.Integration.csproj": {
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.API/BookThread.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\tests\\BookThread.Tests.Integration\\BookThread.Tests.Integration.csproj",
-        "projectName": "BookThread.Tests.Integration",
-        "projectPath": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\tests\\BookThread.Tests.Integration\\BookThread.Tests.Integration.csproj",
-        "packagesPath": "C:\\Users\\Blaze Universe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Blaze Universe\\Desktop\\dev\\Professional Projects Folder\\BookThread\\tests\\BookThread.Tests.Integration\\obj\\",
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/src/BookThread.API/BookThread.API.csproj",
+        "projectName": "BookThread.API",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.API/BookThread.API.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Blaze Universe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj",
+        "projectName": "BookThread.Data",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,6 +104,217 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj",
+        "projectName": "BookThread.Integration",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj",
+        "projectName": "BookThread.Logic",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj"
+              },
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/BookThread.Tests.Integration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/BookThread.Tests.Integration.csproj",
+        "projectName": "BookThread.Tests.Integration",
+        "projectPath": "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/BookThread.Tests.Integration.csproj",
+        "packagesPath": "/home/blazeuniverse/.nuget/packages/",
+        "outputPath": "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/blazeuniverse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.API/BookThread.API.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.API/BookThread.API.csproj"
+              },
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Data/BookThread.Data.csproj"
+              },
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/BookThread.Integration.csproj"
+              },
+              "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj": {
+                "projectPath": "/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/BookThread.Logic.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -77,7 +366,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/blazeuniverse/.dotnet/sdk/9.0.309/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

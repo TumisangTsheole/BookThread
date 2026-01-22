@@ -1,0 +1,15 @@
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/bin/Debug/net9.0/BookThread.Integration.deps.json
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/bin/Debug/net9.0/BookThread.Integration.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/bin/Debug/net9.0/BookThread.Integration.pdb
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/bin/Debug/net9.0/BookThread.Data.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/bin/Debug/net9.0/BookThread.Data.pdb
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.csproj.AssemblyReference.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.GeneratedMSBuildEditorConfig.editorconfig
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.AssemblyInfoInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.AssemblyInfo.cs
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.csproj.CoreCompileInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThre.0C901650.Up2Date
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/refint/BookThread.Integration.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.pdb
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/ref/BookThread.Integration.dll
