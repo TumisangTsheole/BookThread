@@ -118,3 +118,6 @@
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/obj/Debug/net9.0/BookThread.Tests.Unit.pdb
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/obj/Debug/net9.0/BookThread.Tests.Unit.genruntimeconfig.cache
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/obj/Debug/net9.0/ref/BookThread.Tests.Unit.dll
+/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/bin/Debug/net9.0/Castle.Core.dll
+/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/bin/Debug/net9.0/Moq.dll
