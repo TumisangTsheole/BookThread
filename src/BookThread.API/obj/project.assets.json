@@ -15,7 +15,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/9.0.11": {
+      "Microsoft.AspNetCore.OpenApi/9.0.12": {
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "1.6.17"
@@ -1007,10 +1007,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.AspNetCore.OpenApi/9.0.11": {
-      "sha512": "rTa3lp6B8KM8AESIwLakTT6XaoUBTnjAZq2pRX6zS/BzQy6mOVUgaawRSyM0WHykHdwbfrEAmer3ys2xE4DVtg==",
+    "Microsoft.AspNetCore.OpenApi/9.0.12": {
+      "sha512": "1MESYhofLCDXPPxxj4fY+e1vqm4ZIMwrt6gbulGNY0fXiNPzhycdIrZJn0JXJmbppEWnkvJtoCPfrzyV1DIpew==",
       "type": "package",
-      "path": "microsoft.aspnetcore.openapi/9.0.11",
+      "path": "microsoft.aspnetcore.openapi/9.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1019,7 +1019,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net9.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.9.0.12.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
@@ -2898,7 +2898,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "BookThread.Logic >= 1.0.0",
-      "Microsoft.AspNetCore.OpenApi >= 9.0.11",
+      "Microsoft.AspNetCore.OpenApi >= 9.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.0"
     ]
   },
@@ -2951,7 +2951,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
-            "version": "[9.0.11, )"
+            "version": "[9.0.12, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

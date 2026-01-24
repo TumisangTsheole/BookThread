@@ -3,12 +3,15 @@ using BookThread.Data.DbService;
 using BookThread.Data.Seeder;
 using BookThread.Data.Entities;
 using BookThread.Logic.Services;
+//using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+
 
 // Get the connection string from appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -29,10 +32,29 @@ builder.Services.AddScoped<UserService>();
 // Add controllers
 builder.Services.AddControllers();
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // React dev servers
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 
 
 
 var app = builder.Build();
+
+app.MapOpenApi();
+/*app.UseSwaggerUI(options => 
+{
+	options.SwaggerEndpoint("/openapi/v1.json", "BookThread API v1");
+});*/
+
 
 // Seed the database
 using (var scope = app.Services.CreateScope())
@@ -42,17 +64,13 @@ using (var scope = app.Services.CreateScope())
 }
 
 
+// Enable CORS
+app.UseCors("AllowFrontend");
 
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    
-}
 
 app.UseHttpsRedirection();
-app.UseHttpsRedirection();
-app.UseAuthorization();
+
+//app.UseAuthorization();
 app.MapControllers();
 
+app.Run();
