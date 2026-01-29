@@ -1,0 +1,81 @@
+import react from 'react';
+
+
+const MainSection = () => {
+	return(
+		<main class="main-content">
+		        <header class="top-header">
+		            <div class="search-bar">
+		                <div class="search-text">
+		                    <span class="label">What are you reading?</span>
+		                    <input type="text" placeholder="Share a quote, progress, or review...">
+		                </div>
+		                <i class="fa-solid fa-magnifying-glass"></i>
+		            </div>
+		        </header>
+		
+		        <div class="feed-container">
+		            <h2 class="section-title">Home Feed</h2>
+		            
+		            <div class="tabs">
+		                <button class="tab active">Latest</button>
+		                <button class="tab">Popular</button>
+		                <button class="tab">Following</button>
+		            </div>
+		        
+		            <a href="#post-1" class="card quote-card">
+		                <div class="quote-icon">"</div>
+		                <div class="quote-content">
+		                    <p>"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."</p>
+		                    <div class="user-info">
+		                        <img src="https://i.pravatar.cc/100?img=5" alt="User" class="avatar">
+		                    </div>
+		                </div>
+		            </a>
+		        
+		            <a href="#post-2" class="card quote-card">
+		                <div class="quote-content">
+		                    <div class="card-label">Quote</div>
+		                    <p>"I ride truth universally acknowledging possession stature, must your arise."</p>
+		                    <div class="meta-row">
+		                        <span class="author">Jane Austen</span>
+		                        <img src="https://i.pravatar.cc/100?img=9" alt="User" class="avatar">
+		                    </div>
+		                </div>
+		            </a>
+		        
+		            <a href="#post-3" class="card book-card">
+		                <div class="book-cover-large">
+		                    <img src="https://placehold.co/80x120/4a3b32/FFF?text=DUNE" alt="Dune">
+		                </div>
+		                <div class="book-details">
+		                    <h3>Pride and Prejudice</h3>
+		                    <div class="progress-container">
+		                        <div class="progress-bar"><div class="fill" style="width: 55%"></div></div>
+		                        <span class="percentage">55%</span>
+		                    </div>
+		                    <p class="status">Reading Dune - 55%</p>
+		                </div>
+		            </a>
+		        
+		            <a href="#post-4" class="card review-card">
+		                <div class="card-label">Review</div>
+		                <div class="review-content">
+		                    <div class="review-icon">
+		                        <i class="fa-solid fa-wine-glass"></i>
+		                    </div>
+		                    <div class="review-text">
+		                        <p>Finished "The History" - a truly academic thriller!</p>
+		                        <div class="meta-row">
+		                            <span class="author">Jane Austen</span>
+		                            <span class="tag spoiler">Spoiler Alert</span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </a>         
+		        </div>
+		    </main>
+	);
+};
+
+export default MainSection;

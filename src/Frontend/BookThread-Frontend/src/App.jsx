@@ -1,66 +1,36 @@
-/*import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
-*/
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css'
 
-// import pages
+import LeftSideBar from './pages/LeftSideBar.jsx';
+import Feed from './pages/Feed.jsx';
+import RightSideBar from './pages/RightSideBar.jsx';
+import QuotePage from './pages/QuotePage.jsx';
 
-import Home from "./pages/Home";
-import Books from "./pages/Books";
-//import Threads from "./pages/Threads";
-//import Users from "./pages/Users";
-//import UserBooks from "./pages/UserBooks";
-
-// import components
-
-import Navbar from "./components/Navbar";
 
 const App = () => (
+<div className="app-container">
   <Router>
-    <Navbar />
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/books" element={<Books />} />
-     {/* <Route path="/threads" element={<Threads />} /> */}
-     {/* <Route path="/users" element={<Users />} /> */}
-     {/* <Route path="/userbooks" element={<UserBooks />} /> */}
+      <Route path="/Feed" element={<><LeftSideBar /><Feed /><RightSideBar view="feed" /></>} />
+      <Route path="/Quote" element={<><LeftSideBar /><QuotePage /><RightSideBar view="quote" /></>} />
     </Routes>
   </Router>
+</div>  
 );
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
