@@ -14,12 +14,22 @@ public class UserService : ICrudService<User, Guid>
 
     public async Task<User?> GetByIdAsync(Guid id)
     {
-        return await _context.Users.FindAsync(id);
+        return await _context.Users
+            .Include(u => u.UserBooks)
+                .ThenInclude(ub => ub.Book)
+            .Include(u => u.Threads)
+                .ThenInclude(t => t.Book)
+            .FirstOrDefaultAsync(u => u.Id == id);
     }
-
+    
     public async Task<List<User>> GetAllAsync()
     {
-        return await _context.Users.ToListAsync();
+        return await _context.Users
+            .Include(u => u.UserBooks)
+                .ThenInclude(ub => ub.Book)
+            .Include(u => u.Threads)
+                .ThenInclude(t => t.Book)
+            .ToListAsync();
     }
 
     public async Task<User> CreateAsync(User user)

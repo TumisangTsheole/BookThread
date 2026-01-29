@@ -16,12 +16,17 @@ public class UserBookService
     public async Task<UserBook?> GetByCompositeKeyAsync(Guid userId, string bookISBN)
     {
         return await _context.UserBooks
+            .Include(ub => ub.User)
+            .Include(ub => ub.Book)
             .FirstOrDefaultAsync(ub => ub.UserId == userId && ub.BookISBN == bookISBN);
     }
-
+    
     public async Task<List<UserBook>> GetAllAsync()
     {
-        return await _context.UserBooks.ToListAsync();
+        return await _context.UserBooks
+            .Include(ub => ub.User)
+            .Include(ub => ub.Book)
+            .ToListAsync();
     }
 
     public async Task<UserBook> CreateAsync(UserBook userBook)

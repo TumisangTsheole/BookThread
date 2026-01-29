@@ -35,14 +35,14 @@
         }
       },
       "coverlet.collector/6.0.2": {},
-      "Microsoft.AspNetCore.OpenApi/9.0.11": {
+      "Microsoft.AspNetCore.OpenApi/9.0.12": {
         "dependencies": {
           "Microsoft.OpenApi": "1.6.17"
         },
         "runtime": {
           "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "assemblyVersion": "9.0.11.0",
-            "fileVersion": "9.0.1125.52006"
+            "assemblyVersion": "9.0.12.0",
+            "fileVersion": "9.0.1225.60903"
           }
         }
       },
@@ -511,7 +511,7 @@
       "BookThread.API/1.0.0": {
         "dependencies": {
           "BookThread.Logic": "1.0.0",
-          "Microsoft.AspNetCore.OpenApi": "9.0.11"
+          "Microsoft.AspNetCore.OpenApi": "9.0.12"
         },
         "runtime": {
           "BookThread.API.dll": {
@@ -577,12 +577,12 @@
       "path": "coverlet.collector/6.0.2",
       "hashPath": "coverlet.collector.6.0.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.OpenApi/9.0.11": {
+    "Microsoft.AspNetCore.OpenApi/9.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTa3lp6B8KM8AESIwLakTT6XaoUBTnjAZq2pRX6zS/BzQy6mOVUgaawRSyM0WHykHdwbfrEAmer3ys2xE4DVtg==",
-      "path": "microsoft.aspnetcore.openapi/9.0.11",
-      "hashPath": "microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512"
+      "sha512": "sha512-1MESYhofLCDXPPxxj4fY+e1vqm4ZIMwrt6gbulGNY0fXiNPzhycdIrZJn0JXJmbppEWnkvJtoCPfrzyV1DIpew==",
+      "path": "microsoft.aspnetcore.openapi/9.0.12",
+      "hashPath": "microsoft.aspnetcore.openapi.9.0.12.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.12.0": {
       "type": "package",

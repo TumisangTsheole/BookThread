@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookThread.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class SecondMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,10 +17,17 @@ namespace BookThread.Data.Migrations
                 columns: table => new
                 {
                     ISBN = table.Column<string>(type: "character varying(13)", maxLength: 13, nullable: false),
-                    Title = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    Author = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    CoverUrl = table.Column<string>(type: "text", nullable: true),
-                    AverageRating = table.Column<double>(type: "double precision", nullable: false)
+                    Title = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: false),
+                    Subtitle = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true),
+                    Publisher = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true),
+                    PublishedDate = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
+                    Description = table.Column<string>(type: "character varying(4000)", maxLength: 4000, nullable: true),
+                    PageCount = table.Column<int>(type: "integer", nullable: true),
+                    AverageRating = table.Column<double>(type: "double precision", nullable: true),
+                    RatingsCount = table.Column<int>(type: "integer", nullable: true),
+                    Language = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    PreviewLink = table.Column<string>(type: "text", nullable: true),
+                    Thumbnail = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

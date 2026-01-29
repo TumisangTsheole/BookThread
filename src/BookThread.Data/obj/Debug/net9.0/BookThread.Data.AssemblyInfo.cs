@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookThread.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15123d9817acba098d909a46b7a7f300fb61e41b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65e75ae6dc3abbfd21dc5eeb2abd34c82c8572de")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookThread.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookThread.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

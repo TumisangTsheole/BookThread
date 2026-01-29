@@ -1,10 +1,9 @@
 import React from 'react';
 
 const LeftSideBar = ({ activePage }) => {
-  const menuItems = [
-    //{ name: 'BookThread', icon: 'fa-book', path: '/BookThread', disabled: false },
-    { name: 'Home', icon: 'fa-house-chimney', path: '/Home', hasArrow: true, disabled: false },
-    { name: 'Explore', icon: 'fa-compass', path: '/Explore', hasArrow: true, disabled: false },
+  const menuItems = [    
+    { name: 'Feed', icon: 'fa-house-chimney', path: '/Feed', hasArrow: true, disabled: false },
+    { name: 'Explore', icon: 'fa-compass', path: '/Explore', hasArrow: true, disabled: true },
     { name: 'Clubs', icon: 'fa-layer-group', path: '/Clubs', hasArrow: true, disabled: true },
     { name: 'Challenges', icon: 'fa-medal', path: '/Challenges', disabled: true },
     { name: 'Profile', icon: 'fa-user', path: '/Profile', hasArrow: true, disabled: true },

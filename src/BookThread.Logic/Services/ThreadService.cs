@@ -15,12 +15,18 @@ public class ThreadService : ICrudService<BookThread.Data.Entities.Thread, int>
 
     public async Task<BookThread.Data.Entities.Thread?> GetByIdAsync(int id)
     {
-        return await _context.Threads.FindAsync(id);
+        return await _context.Threads
+            .Include(t => t.User)
+            .Include(t => t.Book)
+            .FirstOrDefaultAsync(t => t.Id == id);
     }
-
+    
     public async Task<List<BookThread.Data.Entities.Thread>> GetAllAsync()
     {
-        return await _context.Threads.ToListAsync();
+        return await _context.Threads
+            .Include(t => t.User)
+            .Include(t => t.Book)
+            .ToListAsync();
     }
 
     public async Task<BookThread.Data.Entities.Thread> CreateAsync(BookThread.Data.Entities.Thread thread)

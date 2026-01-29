@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "c0r+5V12HbU=",
+  "dgSpecHash": "1ro8drXFgPs=",
   "success": true,
   "projectFilePath": "/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Unit/BookThread.Tests.Unit.csproj",
   "expectedPackageFiles": [
     "/home/blazeuniverse/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/blazeuniverse/.nuget/packages/coverlet.collector/6.0.2/coverlet.collector.6.0.2.nupkg.sha512",
-    "/home/blazeuniverse/.nuget/packages/microsoft.aspnetcore.openapi/9.0.11/microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512",
+    "/home/blazeuniverse/.nuget/packages/microsoft.aspnetcore.openapi/9.0.12/microsoft.aspnetcore.openapi.9.0.12.nupkg.sha512",
     "/home/blazeuniverse/.nuget/packages/microsoft.codecoverage/17.12.0/microsoft.codecoverage.17.12.0.nupkg.sha512",
     "/home/blazeuniverse/.nuget/packages/microsoft.entityframeworkcore/9.0.0/microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "/home/blazeuniverse/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",

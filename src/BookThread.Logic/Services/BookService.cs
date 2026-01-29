@@ -14,33 +14,55 @@ public class BookService : ICrudService<Book, string>
 
     public async Task<Book?> GetByIdAsync(string isbn)
     {
-        return await _context.Books.FirstOrDefaultAsync(b => b.ISBN == isbn);
+        return await _context.Books
+            .Include(b => b.Threads)
+                .ThenInclude(t => t.User)
+            .Include(b => b.UserBooks)
+                .ThenInclude(ub => ub.User)
+            .Include(b => b.UserBooks)
+                .ThenInclude(ub => ub.Book)
+            .FirstOrDefaultAsync(b => b.ISBN == isbn);
     }
-
+    
     public async Task<List<Book>> GetAllAsync()
     {
-        return await _context.Books.ToListAsync();
+        return await _context.Books
+            .Include(b => b.Threads)
+                .ThenInclude(t => t.User)
+            .Include(b => b.UserBooks)
+                .ThenInclude(ub => ub.User)
+            .Include(b => b.UserBooks)
+                .ThenInclude(ub => ub.Book)
+            .ToListAsync();
     }
+
+	public async Task<bool> UpdateAsync(string isbn, Book updatedBook)
+	{
+	    var book = await GetByIdAsync(isbn);
+	    if (book == null) return false;
+
+	    // Update fields that exist in your Book model
+	    book.Title = updatedBook.Title;
+	    book.Subtitle = updatedBook.Subtitle;
+	    book.Publisher = updatedBook.Publisher;
+	    book.PublishedDate = updatedBook.PublishedDate;
+	    book.Description = updatedBook.Description;
+	    book.PageCount = updatedBook.PageCount;
+	    book.AverageRating = updatedBook.AverageRating;
+	    book.RatingsCount = updatedBook.RatingsCount;
+	    book.Language = updatedBook.Language;
+	    book.PreviewLink = updatedBook.PreviewLink;
+	    book.Thumbnail = updatedBook.Thumbnail;
+
+	    await _context.SaveChangesAsync();
+	    return true;
+	}
 
     public async Task<Book> CreateAsync(Book book)
     {
         _context.Books.Add(book);
         await _context.SaveChangesAsync();
         return book;
-    }
-
-    public async Task<bool> UpdateAsync(string isbn, Book updatedBook)
-    {
-        var book = await GetByIdAsync(isbn);
-        if (book == null) return false;
-
-        book.Title = updatedBook.Title;
-        book.Author = updatedBook.Author;
-        book.CoverUrl = updatedBook.CoverUrl;
-        book.AverageRating = updatedBook.AverageRating;
-
-        await _context.SaveChangesAsync();
-        return true;
     }
 
     public async Task<bool> DeleteAsync(string isbn)

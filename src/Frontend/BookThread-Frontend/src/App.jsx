@@ -12,7 +12,7 @@ const App = () => (
 <div className="app-container">
   <Router>
     <Routes>
-      <Route path="/Feed" element={<><LeftSideBar /><Feed /><RightSideBar view="feed" /></>} />
+      <Route path="/Feed" element={<><LeftSideBar activePage="Feed"/><Feed /><RightSideBar view="feed" /></>} />
       <Route path="/Quote" element={<><LeftSideBar /><QuotePage /><RightSideBar view="quote" /></>} />
     </Routes>
   </Router>

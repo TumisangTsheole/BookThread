@@ -21,7 +21,7 @@ builder.Services.AddDbContext<BookThread.Data.DbService.AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 // Register The Seeder
-builder.Services.AddTransient<DataSeeder>();
+builder.Services.AddScoped<DataSeeder>();
 
 // Register your services
 builder.Services.AddScoped<BookService>();
@@ -30,7 +30,13 @@ builder.Services.AddScoped<UserBookService>();
 builder.Services.AddScoped<UserService>();
 
 // Add controllers
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+	.AddJsonOptions(options =>
+	    {
+	        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+	    });
+
+
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -57,10 +63,17 @@ app.MapOpenApi();
 
 
 // Seed the database
-using (var scope = app.Services.CreateScope())
+/*using (var scope = app.Services.CreateScope())
 {
     var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
     await seeder.SeedAsync();
+}*/
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var seeder = services.GetRequiredService<DataSeeder>();
+    await seeder.SeedAsync();   // runtime seeding
 }
 
 

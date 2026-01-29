@@ -17,7 +17,7 @@ public class User
     public required string PasswordHash { get; set; }
 
     [MaxLength(150)]
-    public string? Bio { get; set; } // '?' means Bio can be null (optional)
+    public string? Bio { get; set; } 
 
     // Relationships
     // This is the "Join Table" list

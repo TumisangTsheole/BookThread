@@ -1,43 +1,17 @@
 import React from 'react';
 
-/*
-quote-card
-animate-in
-quote-content
-quote-mark
-quote-text
-quote-author
-quote-avatar
-thread-stats
-animate-in
-fas fa-heart
-far fa-comment
-comments-list
-comment-card
-comment-avatar
-comment-content
-comment-header
-user-name
-time-stamp
-comment-text
-comment-actions
-far fa-heart like-btn
-comment-input-area 
-input-avatar
-post-btn
-*/
 
 const QuotePage = () => {
 	return (
 		<div className="main-content-quotepage" style={{ paddingBottom: '5rem'}}>
-		<h1 className="quote-author">Quote</h1><br></br>
-		<div className="quote-card animate-in" style={{ animationDelay: '0.4s' }}>
-		    <div className="quote-content">
-		        <span className="quote-mark">"</span>
-		        <p className="quote-text">It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p>
-		        <p className="quote-author">Jane Austen</p>
+		<h1 className="quote-author-quotepage">Quote</h1><br></br>
+		<div className="quote-card-quotepage animate-in" style={{ animationDelay: '0.4s' }}>
+		    <div className="quote-content-quotepage">
+		        <span className="quote-mark-quotepage">"</span>
+		        <p className="quote-text-quotepage">It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p>
+		        <p className="quote-author-quotepage">Jane Austen</p>
 		    </div>
-		    <div className="quote-avatar">
+		    <div className="quote-avatar-quotepage">
 		        <img src="https://i.pravatar.cc/150?img=5" alt="User Avatar"></img>
 		    </div>
 		</div>

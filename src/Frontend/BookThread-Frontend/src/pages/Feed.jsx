@@ -1,81 +1,266 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import QuotePost from '../components/QuotePost.jsx';
+import QuotePost2 from '../components/QuotePost2.jsx';
+import ProgressPost from '../components/ProgressPost.jsx';
+import ReviewPost from '../components/ReviewPost.jsx';
+import axios from 'axios';
 
+// TODO: Backend must send `progressPercentage` for ProgressPost
+// TODO: Backend must send `imageLink` for QuotePost and QuotePost2
+
+const typeMap = {
+  0: "QuotePost",
+  1: "ProgressPost",
+  2: "ReviewPost",
+  3: "QuotePost2"
+};
 
 const Feed = () => {
-	return(
-		<main className="main-content">
-		        <header className="top-header">
-		            <div className="search-bar">
-		                <div className="search-text">
-		                    <span className="label">What are you reading?</span>
-		                    <input type="text" placeholder="Share a quote, progress, or review..."></input>
-		                </div>
-		                <i className="fa-solid fa-magnifying-glass"></i>
-		            </div>
-		        </header>
-		
-		        <div className="feed-container">
-		            <h2 className="section-title">Home Feed</h2>
-		            
-		            <div className="tabs">
-		                <button className="tab active">Latest</button>
-		                <button className="tab">Popular</button>
-		                <button className="tab">Following</button>
-		            </div>
-		        
-		            <a href="#post-1" className="card quote-card">
-		                <div className="quote-icon">"</div>
-		                <div className="quote-content">
-		                    <p>"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."</p>
-		                    <div className="user-info">
-		                        <img src="https://i.pravatar.cc/100?img=5" alt="User" className="avatar"></img>
-		                    </div>
-		                </div>
-		            </a>
-		        
-		            <a href="#post-2" className="card quote-card">
-		                <div className="quote-content">
-		                    <div className="card-label">Quote</div>
-		                    <p>"I ride truth universally acknowledging possession stature, must your arise."</p>
-		                    <div className="meta-row">
-		                        <span className="author">Jane Austen</span>
-		                        <img src="https://i.pravatar.cc/100?img=9" alt="User" className="avatar"></img>
-		                    </div>
-		                </div>
-		            </a>
-		        
-		            <a href="#post-3" className="card book-card">
-		                <div className="book-cover-large">
-		                    <img src="https://placehold.co/80x120/4a3b32/FFF?text=DUNE" alt="Dune"></img>
-		                </div>
-		                <div className="book-details">
-		                    <h3>Pride and Prejudice</h3>
-		                    <div className="progress-container">
-		                        <div className="progress-bar"><div className="fill" style={{width: '55%'}}></div></div>
-		                        <span className="percentage">55%</span>
-		                    </div>
-		                    <p className="status">Reading Dune - 55%</p>
-		                </div>
-		            </a>
-		        
-		            <a href="#post-4" className="card review-card">
-		                <div className="card-label">Review</div>
-		                <div className="review-content">
-		                    <div className="review-icon">
-		                        <i className="fa-solid fa-wine-glass"></i>
-		                    </div>
-		                    <div className="review-text">
-		                        <p>Finished "The History" - a truly academic thriller!</p>
-		                        <div className="meta-row">
-		                            <span className="author">Jane Austen</span>
-		                            <span className="tag spoiler">Spoiler Alert</span>
-		                        </div>
-		                    </div>
-		                </div>
-		            </a>         
-		        </div>
-		    </main>
-	);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchThreads = async () => {
+      try {
+        const res = await axios.get('http://localhost:5164/api/threads'); // adjust endpoint
+        const response = res.data; // Axios wraps payload in .data
+
+        const normalized = response.map(post => {
+          switch (post.threadType) {
+            case 0: // QuotePost
+              return {
+                ...post,
+                type: typeMap[post.threadType],
+                postLink: `#post-${post.id}`,
+                content: post.content,
+                imageLink: "https://i.pravatar.cc/100?img=5" // TODO: replace with backend field
+              };
+            case 1: // ProgressPost
+              return {
+                ...post,
+                type: typeMap[post.threadType],
+                postLink: `#post-${post.id}`,
+                bookImageLink: post.book?.thumbnail,
+                bookName: post.book?.title,
+                progressPercentage: 42 // TODO: replace with backend field
+              };
+            case 2: // ReviewPost
+              return {
+                ...post,
+                type: typeMap[post.threadType],
+                postLink: `#post-${post.id}`,
+                reviewText: post.content
+              };
+            case 3: // QuotePost2
+              return {
+                ...post,
+                type: typeMap[post.threadType],
+                postLink: `#post-${post.id}`,
+                content: post.content,
+                imageLink: "https://i.pravatar.cc/100?img=9", // TODO: replace with backend field
+                profileName: post.user?.username
+              };
+            default:
+              return post;
+          }
+        });
+
+        setPosts(normalized);
+      } catch (err) {
+        console.error("Error fetching threads:", err);
+      }
+    };
+
+    fetchThreads();
+  }, []);
+
+  const renderPost = (post) => {
+    switch (post.type) {
+      case "QuotePost":
+        return (
+          <QuotePost
+            key={post.id}
+            postLink={post.postLink}
+            content={post.content}
+            imageLink={post.imageLink}
+          />
+        );
+      case "QuotePost2":
+        return (
+          <QuotePost2
+            key={post.id}
+            postLink={post.postLink}
+            content={post.content}
+            imageLink={post.imageLink}
+            profileName={post.profileName}
+          />
+        );
+      case "ProgressPost":
+        return (
+          <ProgressPost
+            key={post.id}
+            postLink={post.postLink}
+            bookImageLink={post.bookImageLink}
+            bookName={post.bookName}
+            progressPercentage={post.progressPercentage}
+          />
+        );
+      case "ReviewPost":
+        return (
+          <ReviewPost
+            key={post.id}
+            postLink={post.postLink}
+            reviewText={post.reviewText}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <main className="main-content">
+      <header className="top-header">
+        <div className="search-bar">
+          <div className="search-text">
+            <span className="label">What are you reading?</span>
+            <input type="text" placeholder="Share a quote, progress, or review..." />
+          </div>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </header>
+
+      <div className="feed-container">
+        <h2 className="section-title">Home Feed</h2>
+
+        <div className="tabs">
+          <button className="tab active">Latest</button>
+          <button className="tab">Popular</button>
+          <button className="tab">Following</button>
+        </div>
+
+        {posts.map(renderPost)}
+      </div>
+    </main>
+  );
 };
 
 export default Feed;
+
+/* -------------------------------
+   ORIGINAL VERSION (for fallback)
+----------------------------------
+
+import React from 'react';
+import QuotePost from '../components/QuotePost.jsx';
+import QuotePost2 from '../components/QuotePost2.jsx';
+import ProgressPost from '../components/ProgressPost.jsx';
+import ReviewPost from '../components/ReviewPost.jsx';
+
+const response = [
+  {
+    id: 1,
+    type: "QuotePost",
+    postLink: "#post-1",
+    content: "It is a truth universally acknowledged...",
+    imageLink: "https://i.pravatar.cc/100?img=5"
+  },
+  {
+    id: 2,
+    type: "QuotePost2",
+    postLink: "#post-2",
+    content: "All we have to decide...",
+    imageLink: "https://i.pravatar.cc/100?img=9",
+    profileName: "J.R.R. Tolkien"
+  },
+  {
+    id: 3,
+    type: "ProgressPost",
+    postLink: "#post-3",
+    bookImageLink: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    bookName: "Pride and Prejudice",
+    progressPercentage: 55
+  },
+  {
+    id: 4,
+    type: "ReviewPost",
+    postLink: "#post-4",
+    reviewText: 'Finished "Dune"...'
+  }
+];
+
+const Feed = () => {
+  const posts = response;
+
+  const renderPost = (post) => {
+    switch (post.type) {
+      case "QuotePost":
+        return (
+          <QuotePost
+            key={post.id}
+            postLink={post.postLink}
+            content={post.content}
+            imageLink={post.imageLink}
+          />
+        );
+      case "QuotePost2":
+        return (
+          <QuotePost2
+            key={post.id}
+            postLink={post.postLink}
+            content={post.content}
+            imageLink={post.imageLink}
+            profileName={post.profileName}
+          />
+        );
+      case "ProgressPost":
+        return (
+          <ProgressPost
+            key={post.id}
+            postLink={post.postLink}
+            bookImageLink={post.bookImageLink}
+            bookName={post.bookName}
+            progressPercentage={post.progressPercentage}
+          />
+        );
+      case "ReviewPost":
+        return (
+          <ReviewPost
+            key={post.id}
+            postLink={post.postLink}
+            reviewText={post.reviewText}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <main className="main-content">
+      <header className="top-header">
+        <div className="search-bar">
+          <div className="search-text">
+            <span className="label">What are you reading?</span>
+            <input type="text" placeholder="Share a quote, progress, or review..." />
+          </div>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </header>
+
+      <div className="feed-container">
+        <h2 className="section-title">Home Feed</h2>
+
+        <div className="tabs">
+          <button className="tab active">Latest</button>
+          <button className="tab">Popular</button>
+          <button className="tab">Following</button>
+        </div>
+
+        {posts.map(renderPost)}
+      </div>
+    </main>
+  );
+};
+
+export default Feed;
+*/

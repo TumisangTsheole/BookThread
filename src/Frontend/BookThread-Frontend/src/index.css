@@ -89,7 +89,7 @@ body {
 /* Active State Design */
 .nav-item.active {
     background-color: var(--bg-widget);
-    border: 1px solid var(--text-dark);
+    /* border: 1px solid var(--text-dark); */
     font-weight: 700;
 }
 
@@ -726,7 +726,7 @@ body {
 
 /* Quote Page Styles */
 
-.quote-card {
+.quote-card-quotepage {
     background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 20px;
@@ -737,8 +737,8 @@ body {
     justify-content: space-between;
     align-items: flex-end;
 }
-.quote-content { flex: 1; padding-right: 2rem; }
-.quote-mark {
+.quote-content-quotepage { flex: 1; padding-right: 2rem; }
+.quote-mark-quotepage {
     font-family: 'Merriweather', serif;
     font-size: 5rem;
     color: var(--accent-brown);
@@ -747,7 +747,7 @@ body {
     margin-bottom: 1.5rem;
     display: block;
 }
-.quote-text {
+.quote-text-quotepage {
     font-family: 'Merriweather', serif;
     font-size: 1.4rem;
     font-style: italic;
@@ -755,11 +755,11 @@ body {
     margin-bottom: 1rem;
     color: var(--text-dark);
 }
-.quote-author {
+.quote-author-quotepage {
     font-weight: 600;
     color: var(--text-light);
 }
-.quote-avatar img {
+.quote-avatar-quotepage img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
