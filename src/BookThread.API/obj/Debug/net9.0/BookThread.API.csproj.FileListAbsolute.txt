@@ -124,3 +124,4 @@
 /home/blazeuniverse/projects/BookThread/src/BookThread.API/obj/Debug/net9.0/BookThread.API.pdb
 /home/blazeuniverse/projects/BookThread/src/BookThread.API/obj/Debug/net9.0/BookThread.API.genruntimeconfig.cache
 /home/blazeuniverse/projects/BookThread/src/BookThread.API/obj/Debug/net9.0/ref/BookThread.API.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.API/obj/Debug/net9.0/BookThread.API.sourcelink.json

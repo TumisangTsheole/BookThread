@@ -14,3 +14,4 @@ C:/Users/Blaze Universe/Desktop/dev/Professional Projects Folder/BookThread/src/
 /home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.pdb
 /home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/ref/BookThread.Data.dll
 /home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.csproj.AssemblyReference.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Data/obj/Debug/net9.0/BookThread.Data.sourcelink.json

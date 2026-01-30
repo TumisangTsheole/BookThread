@@ -17,7 +17,7 @@ public class ThreadService : ICrudService<BookThread.Data.Entities.Thread, int>
     {
         return await _context.Threads
             .Include(t => t.User)
-            .Include(t => t.Book)
+           .Include(t => t.Book)
             .FirstOrDefaultAsync(t => t.Id == id);
     }
     
@@ -25,7 +25,7 @@ public class ThreadService : ICrudService<BookThread.Data.Entities.Thread, int>
     {
         return await _context.Threads
             .Include(t => t.User)
-            .Include(t => t.Book)
+	        .Include(t => t.Book)
             .ToListAsync();
     }
 

@@ -13,3 +13,4 @@
 /home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/refint/BookThread.Integration.dll
 /home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.pdb
 /home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/ref/BookThread.Integration.dll
+/home/blazeuniverse/projects/BookThread/src/BookThread.Integration/obj/Debug/net9.0/BookThread.Integration.sourcelink.json

@@ -3,6 +3,7 @@ using BookThread.Data.Entities;
 using BookThread.Data.DbService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Xunit;
 
 namespace BookThread.Tests.Unit
@@ -14,7 +15,8 @@ namespace BookThread.Tests.Unit
 
         public BookServiceTests()
         {
-            var options = new DbContextOptionsBuilder<AppDbContext>().UseInMemoryDatabase(databaseName: "BookTestDb").Options;
+            var options = new DbContextOptionsBuilder<AppDbContext>().UseInMemoryDatabase(databaseName: "BookTestDb").ConfigureWarnings(x => x.Ignore(CoreEventId.NavigationBaseIncludeIgnored))
+                .Options;
 
             _dbContext = new AppDbContext(options);
 			_dbContext.Database.EnsureDeleted();
@@ -27,10 +29,21 @@ namespace BookThread.Tests.Unit
         {
             _dbContext.Books.Add(new Book
             {
-                ISBN = "123",
-                Title = "Test Book",
-                Author = "Author A",
-                AverageRating = 4.5
+                // Required properties
+                    ISBN = "9780143127741",
+                    Title = "The Quantum Librarian",
+                
+                    // Optional properties
+                    Subtitle = "A Journey Through the Multiverse of Lost Records",
+                    Publisher = "Aether Press",
+                    PublishedDate = "2025-11-12",
+                    Description = "In a world where every forgotten thought is archived, one librarian must protect the ultimate secret from those who wish to rewrite history.",
+                    PageCount = 412,
+                    AverageRating = 4.8,
+                    RatingsCount = 1250,
+                    Language = "en",
+                    PreviewLink = "https://books.example.com/preview/9780143127741",
+                    Thumbnail = "https://books.example.com/images/9780143127741.jpg"
             });
             _dbContext.SaveChanges();
         }
@@ -40,7 +53,7 @@ namespace BookThread.Tests.Unit
         {
             var result = await _service.GetAllAsync();
             Assert.Single(result);
-            Assert.Equal("Test Book", result.First().Title);
+            Assert.Equal("The Quantum Librarian", result.First().Title);
         }
     }
 }

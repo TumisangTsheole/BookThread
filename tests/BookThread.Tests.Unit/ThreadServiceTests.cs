@@ -15,7 +15,7 @@ public class ThreadServiceTests
     public ThreadServiceTests()
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: "ThreadTestDb").Options;
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()).Options;
 
         _dbContext = new AppDbContext(options);
 		_dbContext.Database.EnsureDeleted();
@@ -26,6 +26,22 @@ public class ThreadServiceTests
 
     private void SeedData()
     {
+        var userId = Guid.NewGuid();
+        
+        _dbContext.Users.Add(new User
+        {
+            Id = userId,
+            Username = "TestUser",
+            Email = "test@example.com",
+            PasswordHash = "hashedpassword123"
+        });
+        
+        _dbContext.Books.Add(new Book
+        {
+            ISBN = "123",
+            Title = "Test Book"
+        });
+        
         _dbContext.Threads.Add(new BookThread.Data.Entities.Thread
         {
             Id = 1,
@@ -33,15 +49,16 @@ public class ThreadServiceTests
             ThreadType = BookThread.Data.Entities.Thread.Type.Review,
             IsSpoiler = false,
             BookISBN = "123",
-            UserId = Guid.NewGuid()
+            UserId = userId
         });
+        
         _dbContext.SaveChanges();
     }
 
     [Fact]
     public async Task GetAllThreads_ReturnsListAsync()
-    {
-        var result = await _service.GetAllAsync();
+    {    	 
+       var result = await _service.GetAllAsync();
         Assert.Single(result);
     }
 

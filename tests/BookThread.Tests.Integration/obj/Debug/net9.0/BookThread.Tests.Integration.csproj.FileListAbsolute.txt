@@ -118,3 +118,4 @@
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/obj/Debug/net9.0/BookThread.Tests.Integration.pdb
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/obj/Debug/net9.0/BookThread.Tests.Integration.genruntimeconfig.cache
 /home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/obj/Debug/net9.0/ref/BookThread.Tests.Integration.dll
+/home/blazeuniverse/projects/BookThread/tests/BookThread.Tests.Integration/obj/Debug/net9.0/BookThread.Tests.Integration.sourcelink.json

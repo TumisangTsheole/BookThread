@@ -11,8 +11,8 @@ public class UserBookServiceTests
 {
     private readonly AppDbContext _dbContext;
     private readonly UserBookService _service;
-    private readonly Guid _userId = Guid.NewGuid();
-
+	private readonly Guid _userId = Guid.NewGuid();
+	
     public UserBookServiceTests()
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
@@ -27,6 +27,21 @@ public class UserBookServiceTests
 
     private void SeedData()
     {
+   
+	    _dbContext.Users.Add(new User
+	    {
+	        Id = _userId,
+	        Username = "TestUser",
+	        Email = "test@example.com",
+	        PasswordHash = "hashedpassword123"
+	    });
+	    
+	    _dbContext.Books.Add(new Book
+	    {
+	        ISBN = "123",
+	        Title = "Test Book"
+	    });
+
         _dbContext.UserBooks.Add(new UserBook
         {
             UserId = _userId,
