@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
       - name: Run Unit Tests
-        run: dotnet test --configuration Release
+        run: dotnet test --configuration Release --verbosity normal
 
   # --- React Frontend Job ---
   build-react:
