@@ -27,7 +27,7 @@ public class ThreadServiceTests
     private void SeedData()
     {
         var userId = Guid.NewGuid();
-        
+		var commentId = Guid.NewGuid();        
         _dbContext.Users.Add(new User
         {
             Id = userId,
@@ -41,6 +41,14 @@ public class ThreadServiceTests
             ISBN = "123",
             Title = "Test Book"
         });
+
+		_dbContext.Comments.Add( new Comment{
+			Id = commentId,
+			Content = "I too have an initial comment",
+			UserId =userId,
+			ThreadId = 1,
+				
+		});
         
         _dbContext.Threads.Add(new BookThread.Data.Entities.Thread
         {

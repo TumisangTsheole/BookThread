@@ -23,4 +23,5 @@ public class User
     // This is the "Join Table" list
     public List<UserBook> UserBooks { get; set; } = new();
     public List<Thread> Threads { get; set; } = new();
+    public List<Comment> Comments { get; set; } = new();
 }

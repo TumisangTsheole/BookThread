@@ -12,6 +12,8 @@ public class AppDbContext : DbContext
     public DbSet<Book> Books { get; set; }
     public DbSet<BookThread.Data.Entities.Thread> Threads { get; set; }
     public DbSet<UserBook> UserBooks { get; set; }
+	public DbSet<Comment> Comments { get; set; }
+
 
     // Because convention are limiting we are manually creatinng the relationsips
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,5 +43,21 @@ public class AppDbContext : DbContext
             .WithMany(u => u.Threads)
             .HasForeignKey(t => t.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        
+       	modelBuilder.Entity<Comment>()
+       	    .HasOne(c => c.Thread)
+       	    .WithMany(t => t.Comments) // Use WithMany instead of WithOne
+       	    .HasForeignKey(c => c.ThreadId);
+        	
+        
+		// 4. Configure One to one relationship 
+        modelBuilder.Entity<Comment>()
+        	.HasOne(c => c.User)
+        	.WithMany(u => u.Comments)
+        	.HasForeignKey(c => c.UserId);
+
+        	        	
+        	
     }
 }

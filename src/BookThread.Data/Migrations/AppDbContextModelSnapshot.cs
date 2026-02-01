@@ -73,6 +73,32 @@ namespace BookThread.Data.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("BookThread.Data.Entities.Comment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<int>("ThreadId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ThreadId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("BookThread.Data.Entities.Thread", b =>
                 {
                     b.Property<int>("Id")
@@ -161,6 +187,25 @@ namespace BookThread.Data.Migrations
                     b.ToTable("UserBooks");
                 });
 
+            modelBuilder.Entity("BookThread.Data.Entities.Comment", b =>
+                {
+                    b.HasOne("BookThread.Data.Entities.Thread", "Thread")
+                        .WithMany("Comments")
+                        .HasForeignKey("ThreadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookThread.Data.Entities.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Thread");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BookThread.Data.Entities.Thread", b =>
                 {
                     b.HasOne("BookThread.Data.Entities.Book", "Book")
@@ -206,8 +251,15 @@ namespace BookThread.Data.Migrations
                     b.Navigation("UserBooks");
                 });
 
+            modelBuilder.Entity("BookThread.Data.Entities.Thread", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("BookThread.Data.Entities.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Threads");
 
                     b.Navigation("UserBooks");

@@ -3,6 +3,7 @@ import QuotePost from '../components/QuotePost.jsx';
 import QuotePost2 from '../components/QuotePost2.jsx';
 import ProgressPost from '../components/ProgressPost.jsx';
 import ReviewPost from '../components/ReviewPost.jsx';
+//import getAllThreads from '../api/threads.js';
 import axios from 'axios';
 
 // TODO: Backend must send `progressPercentage` for ProgressPost
@@ -22,8 +23,8 @@ const Feed = () => {
     const fetchThreads = async () => {
       try {
         const res = await axios.get('http://localhost:5164/api/threads'); // adjust endpoint
-        const response = res.data; // Axios wraps payload in .data
-
+        const response = res.data;
+        
         const normalized = response.map(post => {
           switch (post.threadType) {
             case 0: // QuotePost

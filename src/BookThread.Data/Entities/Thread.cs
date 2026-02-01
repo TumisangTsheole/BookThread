@@ -22,4 +22,7 @@ public class Thread
 
     public string BookISBN { get; set; } = null!;
     public Book Book { get; set; } = null!;
+
+    public List<Comment> Comments { get; set; } = null!;
+    
 }
