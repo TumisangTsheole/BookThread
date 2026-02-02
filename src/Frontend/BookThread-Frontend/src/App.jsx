@@ -13,7 +13,7 @@ const App = () => (
   <Router>
     <Routes>
       <Route path="/Feed" element={<><LeftSideBar activePage="Feed"/><Feed /><RightSideBar view="feed" /></>} />
-      <Route path="/Quote" element={<><LeftSideBar /><QuotePage /><RightSideBar view="quote" /></>} />
+      <Route path="/Quote/:id" element={<><LeftSideBar /><QuotePage /><RightSideBar view="progess" /></>} />
     </Routes>
   </Router>
 </div>  

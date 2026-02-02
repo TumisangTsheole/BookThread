@@ -62,4 +62,13 @@ public class ThreadService : ICrudService<BookThread.Data.Entities.Thread, int>
         await _context.SaveChangesAsync();
         return true;
     }
+
+	// Comments are tied to Threads hence we'll let the ThreadService handle them
+	public async Task<bool> CreateCommentAsync(Comment comment)
+    {
+        _context.Comments.Add(comment);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+    
 }
