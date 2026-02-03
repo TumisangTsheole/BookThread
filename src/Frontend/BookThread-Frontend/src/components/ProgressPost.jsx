@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProgressPost = ({ postLink, bookImageLink, bookName, progressPercentage }) => {
   return (
-    <a href={postLink} className="card book-card">
+    <a href={postLink || "#"} className="card book-card">
       <div className="book-cover-large">
         <img src={bookImageLink} alt={bookName} />
       </div>

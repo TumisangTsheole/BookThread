@@ -12,8 +12,8 @@ const App = () => (
 <div className="app-container">
   <Router>
     <Routes>
-      <Route path="/Feed" element={<><LeftSideBar activePage="Feed"/><Feed /><RightSideBar view="feed" /></>} />
-      <Route path="/Quote/:id" element={<><LeftSideBar /><QuotePage /><RightSideBar view="progess" /></>} />
+      <Route path="/feed" element={<><LeftSideBar activePage="Feed"/><Feed /><RightSideBar view="feed" /></>} />
+      <Route path="/post/:id" element={<><LeftSideBar /><QuotePage /><RightSideBar view="progess" /></>} />
     </Routes>
   </Router>
 </div>  
