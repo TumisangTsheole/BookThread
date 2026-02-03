@@ -32,6 +32,7 @@ const Feed = () => {
                 ...post,
                 type: typeMap[post.threadType],
                 postLink: `#post-${post.id}`,
+                
                 content: post.content,
                 imageLink: "https://i.pravatar.cc/100?img=5" // TODO: replace with backend field
               };
@@ -82,7 +83,7 @@ const Feed = () => {
             key={post.id}
             postLink={post.postLink}
             content={post.content}
-            imageLink={post.imageLink}
+            avatarLink={post.imageLink}
           />
         );
       case "QuotePost2":

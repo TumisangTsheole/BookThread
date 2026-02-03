@@ -143,7 +143,7 @@ const QuotePage = () => {
                             <p className="comment-text">{comment.content}</p>
                         </div>
                         <div className="comment-actions">
-                            <i className="far fa-heart like-btn"></i>
+                            {/*<i className="far fa-heart like-btn"></i>*/}
                         </div>
                     </div>
                 ))}
