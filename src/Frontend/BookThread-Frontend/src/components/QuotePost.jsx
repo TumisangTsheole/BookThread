@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuotePost = ({ postLink, content, avatarLink }) => {
   return (
-    <a href={postLink} className="card quote-card">
+    <a href={postLink || "#"} className="card quote-card">
       <div className="quote-icon">"</div>
       <div className="quote-content">
         <p>{content}</p>

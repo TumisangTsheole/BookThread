@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookThread.Tests.Integration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36b74756190a734e95d439a0622c76b089a4caa5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+705210b4035240e9588637dbbaa4f77c093cad61")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookThread.Tests.Integration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookThread.Tests.Integration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

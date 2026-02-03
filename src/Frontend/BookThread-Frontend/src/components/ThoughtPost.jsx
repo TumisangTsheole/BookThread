@@ -1,8 +1,8 @@
 import React from 'react';
 
-const QuotePost2 = ({ postLink, content, imageLink, profileName }) => {
+const ThoughtPost = ({ postLink, content, imageLink, profileName }) => {
   return (
-    <a href={postLink} className="card quote-card">
+    <a href={postLink || "#"} className="card quote-card">
       <div className="quote-content">
         <div className="card-label">Quote</div>
         <p>{content}</p>
@@ -15,4 +15,4 @@ const QuotePost2 = ({ postLink, content, imageLink, profileName }) => {
   );
 };
 
-export default QuotePost2;
+export default ThoughtPost;
