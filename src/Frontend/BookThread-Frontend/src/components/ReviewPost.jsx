@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewPost = ({ postLink, reviewText }) => {
   return (
-    <a href={postLink} className="card review-card">
+    <a href={postLink != null ? postLink : "#" } className="card review-card">
       <div className="card-label">Review</div>
       <div className="review-content">
         <div className="review-icon">

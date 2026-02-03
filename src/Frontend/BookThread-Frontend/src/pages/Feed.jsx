@@ -3,6 +3,7 @@ import QuotePost from '../components/QuotePost.jsx';
 import QuotePost2 from '../components/QuotePost2.jsx';
 import ProgressPost from '../components/ProgressPost.jsx';
 import ReviewPost from '../components/ReviewPost.jsx';
+//import getAllThreads from '../api/threads.js';
 import axios from 'axios';
 
 // TODO: Backend must send `progressPercentage` for ProgressPost
@@ -22,8 +23,8 @@ const Feed = () => {
     const fetchThreads = async () => {
       try {
         const res = await axios.get('http://localhost:5164/api/threads'); // adjust endpoint
-        const response = res.data; // Axios wraps payload in .data
-
+        const response = res.data;
+        
         const normalized = response.map(post => {
           switch (post.threadType) {
             case 0: // QuotePost
@@ -31,6 +32,7 @@ const Feed = () => {
                 ...post,
                 type: typeMap[post.threadType],
                 postLink: `#post-${post.id}`,
+                
                 content: post.content,
                 imageLink: "https://i.pravatar.cc/100?img=5" // TODO: replace with backend field
               };
@@ -81,7 +83,7 @@ const Feed = () => {
             key={post.id}
             postLink={post.postLink}
             content={post.content}
-            imageLink={post.imageLink}
+            avatarLink={post.imageLink}
           />
         );
       case "QuotePost2":

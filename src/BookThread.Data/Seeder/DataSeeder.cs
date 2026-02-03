@@ -78,5 +78,22 @@ public class DataSeeder
             await _context.UserBooks.AddAsync(userBook);
             await _context.SaveChangesAsync();
         }
+
+        if (!await _context.Comments.AnyAsync())
+        {
+        	var user = await _context.Users.FirstAsync();
+        	var thread = await _context.Threads.FirstAsync();
+        	 
+        	var comment = new Comment
+        	{
+        		Id = Guid.NewGuid(),
+        		Content = "I really feel the same way, enjoying this book so far!!",
+        		UserId = user.Id,
+        		ThreadId = thread.Id	
+        	};
+        	
+        	await _context.Comments.AddAsync(comment);
+        	await _context.SaveChangesAsync();
+        }
     }
 }
