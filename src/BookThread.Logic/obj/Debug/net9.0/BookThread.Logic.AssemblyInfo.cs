@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookThread.Logic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+705210b4035240e9588637dbbaa4f77c093cad61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf4b11ced3571e2ceb68b37642127a2a456ca1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookThread.Logic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookThread.Logic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

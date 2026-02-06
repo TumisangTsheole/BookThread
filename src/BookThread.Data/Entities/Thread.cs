@@ -16,13 +16,13 @@ public class Thread
     public bool IsSpoiler { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    // Relationships
+
     public Guid UserId { get; set; } // The ID
-    public User User { get; set; } = null!; // The Navigation Object
+    public User? User { get; set; } = null!; // The Navigation Object
 
     public string BookISBN { get; set; } = null!;
-    public Book Book { get; set; } = null!;
+    public Book? Book { get; set; } = null!;
 
-    public List<Comment> Comments { get; set; } = null!;
+    public List<Comment>? Comments { get; set; } = null!;
     
 }

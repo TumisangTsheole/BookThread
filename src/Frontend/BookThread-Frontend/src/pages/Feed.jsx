@@ -3,6 +3,7 @@ import QuotePost from '../components/QuotePost.jsx';
 import ThoughtPost from '../components/ThoughtPost.jsx';
 import ProgressPost from '../components/ProgressPost.jsx';
 import ReviewPost from '../components/ReviewPost.jsx';
+import CreatePostModal from '../components/CreatePostModal.jsx'
 //import getAllThreads from '../api/threads.js';
 import axios from 'axios';
 
@@ -20,7 +21,13 @@ const typeMap = {
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [commentText, setCommentText] = useState("");
+  
+  // Create Post Modal Funtionss
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+	
   useEffect(() => {
     const fetchThreads = async () => {
       try {
@@ -136,13 +143,23 @@ const Feed = () => {
       <div className="feed-container">
         <h2 className="section-title">Home Feed</h2>
 
-        <div className="tabs">
-          <button className="tab active">Latest</button>
-          <button className="tab">Popular</button>
-          <button className="tab">Following</button>
-        </div>
-
+    	<div className="tabs">
+    	  <div className="tab-group_FeedPage">
+    	    <button className="tab active">Latest</button>
+    	    <button className="tab">Popular</button>
+    	    <button className="tab">Following</button>
+    	  </div>
+    	
+    	  <button onClick={openModal} className="add-post-btn_FeedPage">
+    	    <span className="btn-text_FeedPage">Add Post</span>
+    	    <span className="btn-icon_FeedPage">+</span>
+    	  </button>
+    	</div>
+    	
         {posts.map(renderPost)}
+
+		<CreatePostModal isOpen={isModalOpen} onClose={closeModal}/>
+        
       </div>
     </main>
   );

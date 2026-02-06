@@ -19,21 +19,18 @@ public class BookService : ICrudService<Book, string>
                 .ThenInclude(t => t.User)
             .Include(b => b.UserBooks)
                 .ThenInclude(ub => ub.User)
-            .Include(b => b.UserBooks)
-                .ThenInclude(ub => ub.Book)
             .FirstOrDefaultAsync(b => b.ISBN == isbn);
+
     }
-    
+
     public async Task<List<Book>> GetAllAsync()
     {
         return await _context.Books
             .Include(b => b.Threads)
-                .ThenInclude(t => t.User)
             .Include(b => b.UserBooks)
                 .ThenInclude(ub => ub.User)
-            .Include(b => b.UserBooks)
-                .ThenInclude(ub => ub.Book)
             .ToListAsync();
+
     }
 
 	public async Task<bool> UpdateAsync(string isbn, Book updatedBook)

@@ -26,10 +26,20 @@ public class ThreadsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(BookThread.Data.Entities.Thread thread)
+    public async Task<IActionResult> Create([FromBody] BookThread.Data.Entities.Thread thread)
     {
-        var created = await _threadService.CreateAsync(thread);
-        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    	Console.WriteLine("This is what i am getting from the frontend"+thread);
+        try 
+            {
+                var created = await _threadService.CreateAsync(thread);
+                return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            }
+            catch (Exception ex)
+            {
+                // This will catch things like Foreign Key violations 
+                // (e.g., if the BookISBN doesn't exist in the Books table)
+                return StatusCode(500, $"Database Error: {ex.Message}");
+            }
     }
 
     [HttpPut("{id}")]

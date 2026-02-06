@@ -15,7 +15,7 @@ public class UserBooksController : ControllerBase
         _userBookService = userBookService;
     }
 
-    [HttpGet]
+
     public async Task<IActionResult> GetAll() => Ok(await _userBookService.GetAllAsync());
 
     [HttpGet("{userId}/{bookISBN}")]

@@ -14,8 +14,7 @@ const QuotePage = () => {
     const [threadData, setThreadData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [commentText, setCommentText] = useState("");
-
+   
     const { id } = useParams();
     const API_URL = `http://localhost:5164/api`; 
 
@@ -111,7 +110,6 @@ const QuotePage = () => {
         <div className="main-content-quotepage" style={{ paddingBottom: '5rem' }}>
             <h1 className="quote-author-quotepage">Discussion</h1><br />
 
-            {/* DYNAMIC HERO SECTION REPLACING THE OLD BLOCK */}
             <div className="animate-in" style={{ animationDelay: '0.4s' }}>
                 {renderThreadHero()}
             </div>
