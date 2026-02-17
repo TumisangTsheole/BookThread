@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BookThread.Logic.Services;
 using BookThread.Data.Entities;
 
 namespace BookThread.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class UserBooksController : ControllerBase
@@ -15,7 +17,7 @@ public class UserBooksController : ControllerBase
         _userBookService = userBookService;
     }
 
-
+	[HttpGet]
     public async Task<IActionResult> GetAll() => Ok(await _userBookService.GetAllAsync());
 
     [HttpGet("{userId}/{bookISBN}")]

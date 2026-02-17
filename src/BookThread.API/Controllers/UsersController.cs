@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BookThread.Logic.Services;
 using BookThread.Data.Entities;
 
 namespace BookThread.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class UsersController : ControllerBase

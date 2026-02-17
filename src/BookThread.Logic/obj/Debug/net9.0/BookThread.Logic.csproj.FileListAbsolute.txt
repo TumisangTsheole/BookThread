@@ -10,9 +10,9 @@
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.AssemblyInfoInputs.cache
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.AssemblyInfo.cs
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.csproj.CoreCompileInputs.cache
+/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.sourcelink.json
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThre.52DF274A.Up2Date
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.dll
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/refint/BookThread.Logic.dll
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.pdb
 /home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/ref/BookThread.Logic.dll
-/home/blazeuniverse/projects/BookThread/src/BookThread.Logic/obj/Debug/net9.0/BookThread.Logic.sourcelink.json
