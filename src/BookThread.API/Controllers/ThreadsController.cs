@@ -30,7 +30,6 @@ public class ThreadsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] BookThread.Data.Entities.Thread thread)
     {
-    	Console.WriteLine("This is what i am getting from the frontend"+thread);
         try 
             {
                 var created = await _threadService.CreateAsync(thread);
@@ -58,7 +57,7 @@ public class ThreadsController : ControllerBase
         return success ? NoContent() : NotFound();
     }
 
-    // Comments Endpoints
+    // Comments Endpoint
     [HttpPost("comment")]
     public async Task<IActionResult> CreateComment([FromBody] Comment comment)
     {

@@ -50,13 +50,14 @@ public class AuthController : ControllerBase
         var user = await _db.Users
             .FirstOrDefaultAsync(u => u.Username == request.UsernameOrEmail || u.Email == request.UsernameOrEmail);
 
+		// Verify is user exists then checks if password is valid
         if (user == null || !BCryptNet.Verify(request.Password, user.PasswordHash))
         {
             return Unauthorized(new { error = "Invalid credentials." });
         }
 
         string token = CreateToken(user);
-        return Ok(new { token });
+        return Ok(new { token = token , user = user });
     }
 
     private string CreateToken(User user)
@@ -68,9 +69,11 @@ public class AuthController : ControllerBase
             new Claim(ClaimTypes.Email, user.Email)
         };
 
+		// Encode security key
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
             _config["Jwt:Key"] ?? "this_is_a_super_long_secret_key_for_jwt_signing_1234567890"));
 
+		// Encrypt the key using Sha256
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(

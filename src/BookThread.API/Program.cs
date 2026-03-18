@@ -61,7 +61,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddOpenApi();
 //builder.Services.AddEndpointsApiExplorer();
-/*builder.Services.AddSwaggerGen(c =>
+
+builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "BookThread API", Version = "v1" });
 
@@ -92,7 +93,7 @@ builder.Services.AddOpenApi();
         }
     });
 });
-*/
+
 
 // Get the connection string from appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -131,25 +132,27 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+
 // Seed the database
 /*using (var scope = app.Services.CreateScope())
 {
     var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
     await seeder.SeedAsync();
 }*/
+
+
 if (app.Environment.IsDevelopment())
 {
-/*	app.UseSwagger();
+	app.MapOpenApi();
+	app.UseSwagger();
 	app.UseSwaggerUI( options =>
 		{
-			options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
-			options.RoutePrefix = "swagger";
-	);
-		}
-*/
+			options.SwaggerEndpoint("/openapi/v1.json", "v1");
+			options.RoutePrefix = "swagger"; // makes swagger available at /swagger
+		});
 
-	app.MapOpenApi();
-	app.MapScalarApiReference(); // Generates the SCalarUI at scalar/v1
+
+	app.MapScalarApiReference(); // Generates the ScalarUI at scalar/v1
 }
 
 
@@ -161,11 +164,12 @@ using (var scope = app.Services.CreateScope())
     await seeder.SeedAsync();   // runtime seeding
 }
 
-// Add auth 
+
+app.UseCors("AllowFrontend");
+// Add auth first 
 app.UseAuthentication();
 app.UseAuthorization();
 // Enable CORS
-app.UseCors("AllowFrontend");
 
 
 app.UseHttpsRedirection();
