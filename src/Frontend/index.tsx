@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { createRoot } from 'react-dom/client';
 import axios from 'axios';
 import { GoogleGenAI } from "@google/genai";
-import { BACKEND_URL } from './env.ts'
 
 import { 
   BookOpen, 
@@ -93,7 +92,8 @@ interface UserBook {
 }
 
 // --- Configuration ---
-const BACKEND_API_URL = BACKEND_URL;
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_URL;
+console.log(`BACKEND: ${BACKEND_API_URL}`);
 const DEMO_CREDENTIALS = { username: 'guest_reader', password: 'password123' };
 
 const MOCK_USER: User = {
