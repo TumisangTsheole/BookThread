@@ -24,7 +24,7 @@ A social reading platform where users can share quotes, post reading progress, s
 
 BookThread is a single-page application (SPA) with no client-side routing. Navigation between views is handled entirely through React state. The app connects to a local ASP.NET Core backend, and falls back to pre-loaded dummy data when the backend is unreachable.
 
-THIS PROJECT IS STILL IN ACTIVE DEVELOPEMENT..
+THIS PROJECT IS STILL IN EARLY ACTIVE DEVELOPEMENT. Please refer to the following documentation for more information...
 ---
 
 ## Tech Stack
@@ -316,3 +316,6 @@ Comments returned from the backend are displaying invalid or incorrectly formatt
 
 Every character typed into the comment input box triggers a re-render of the thread. This is an issue caused by state being structured in a way that couples the input value to the parent component. The comment input state should be isolated so that typing does not cause the comment list to re-render on each keystroke.
 
+**Lack of Book References in some Thread tyoes**
+
+There are Thread type/s that do not show the book being referenced.
