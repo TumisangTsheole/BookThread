@@ -19,6 +19,7 @@ public class ThreadService : ICrudService<BookThread.Data.Entities.Thread, int>
             .Include(t => t.User)
            	.Include(t => t.Book)
            	.Include(t => t.Comments)
+           		.ThenInclude(c => c.User)
             .FirstOrDefaultAsync(t => t.Id == id);
     }
     

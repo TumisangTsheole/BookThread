@@ -60,12 +60,9 @@ public class ThreadsController : ControllerBase
     // Comments Endpoint
     [HttpPost("comment")]
     public async Task<IActionResult> CreateComment([FromBody] Comment comment)
-    {
-    	//Since the frontend might send an empty GUID, 
-    	// ensure the ID is set if it's empty.
-    	if (comment.Id == Guid.Empty) comment.Id = Guid.NewGuid();
-    	    
+    {	    
     	var success = await _threadService.CreateCommentAsync(comment);
     	return success ? NoContent() : NotFound();
     }
+   
 }

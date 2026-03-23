@@ -1007,7 +1007,7 @@ const ThreadDetails = ({ user,  threadId, onBack, token }: { user: User, threadI
           <span className="flex items-center gap-2"><MessageCircle size={14} className="text-emerald-500" /> {thread.comments?.length || 0} Comments</span>
         </div>
 
-        <div className="space-y-4 mb-32">
+        <div className="space-y-4 mb-32">{console.log(thread)}
           {thread.comments?.map((comment, i) => (
             <div key={comment.id} className="bg-white dark:bg-book-card p-4 rounded-2xl border border-book-border flex gap-4 animate-fade-in-up shadow-sm theme-transition" style={{ animationDelay: `${i * 0.1}s` }}>
               <img src={comment.user?.avatarLink || `https://api.dicebear.com/7.x/adventurer/svg?seed=${comment.userId}`} className="w-10 h-10 rounded-full shadow-sm border border-book-border" alt="avatar" />

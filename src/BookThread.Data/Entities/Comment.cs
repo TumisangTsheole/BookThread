@@ -5,7 +5,7 @@ namespace BookThread.Data.Entities;
 public class Comment 
 {
 	[Required, Key]
-	public required Guid Id { get; set; }
+	public Guid Id { get; set; } = Guid.NewGuid();
 
 	[Required, StringLength(1000)]
 	public string Content { get; set; } = null!;

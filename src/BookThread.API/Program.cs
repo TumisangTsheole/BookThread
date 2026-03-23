@@ -62,6 +62,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddOpenApi();
 //builder.Services.AddEndpointsApiExplorer();
 
+
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "BookThread API", Version = "v1" });
@@ -96,7 +98,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 // Get the connection string from appsettings.json
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("ExternalConnection");
 
 // Register AppDbContext with the PostgreSQL provider
 builder.Services.AddDbContext<BookThread.Data.DbService.AppDbContext>(options =>
@@ -120,7 +122,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-           // policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // React dev servers
+           // policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
                policy.AllowAnyOrigin()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
@@ -152,7 +154,7 @@ if (app.Environment.IsDevelopment())
 		});
 
 
-	app.MapScalarApiReference(); // Generates the ScalarUI at scalar/v1
+	app.MapScalarApiReference(); // Generates ScalarUI at scalar/v1
 }
 
 
@@ -165,16 +167,14 @@ using (var scope = app.Services.CreateScope())
 }
 
 
+// Enable CORS
 app.UseCors("AllowFrontend");
-// Add auth first 
 app.UseAuthentication();
 app.UseAuthorization();
-// Enable CORS
 
 
 app.UseHttpsRedirection();
 
-//app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

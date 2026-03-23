@@ -41,7 +41,8 @@ public class AuthController : ControllerBase
         _db.Users.Add(user);
         await _db.SaveChangesAsync();
 
-        return Ok(new { message = "User registered successfully." });
+		string token = CreateToken(user);
+        return Ok(new { message = "User registered successfully.", token = token, user = user  });
     }
 
     [HttpPost("login")]
