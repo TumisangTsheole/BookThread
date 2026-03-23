@@ -34,7 +34,7 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install
-        working-directory: ./src/Frontend/BookThread-Frontend/ # Update this path
+        working-directory: ./src/Frontend
       - name: Build
         run: npm run build
-        working-directory: ./src/Frontend/BookThread-Frontend/
+        working-directory: ./src/Frontend
